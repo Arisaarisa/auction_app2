@@ -32,9 +32,9 @@ class ItemController extends Controller
         $item->price = $request->price;
         $item->seller = $request->seller;
         $item->email = $request->email;
-        $path = $request->file('image_url')->store('public/img');
+        $item->image_url = $request->file('image_url')->store('public/img');
         // Item::create(['file_name' => basename($path)]);
-        $item->image_url = $request->image_url{['file_name' => basename($path)]};
+        // $item->image_url = $request->image_url{['file_name' => basename($path)]};
         $item->timestamps =false;
         // インスタンスに値を設定して保存
         $item->save();

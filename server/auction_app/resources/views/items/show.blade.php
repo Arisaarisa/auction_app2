@@ -25,8 +25,8 @@
     </p>
 
     <p>
-        <img src="{{$item -> image_url}}">
-        <img src="{{ asset('/storage/img/'.$item->file_name) }}">
+        <!-- <img src="{{$item -> image_url}}"> -->
+        <img src="{{ asset('/storage/img/'.$item->image_url) }}">
     </p>
 
 </body>
