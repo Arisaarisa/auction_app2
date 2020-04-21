@@ -19,7 +19,7 @@
     </table>
 
     <!-- 新規登録画面へジャンプする -->
-    <a href="{{ url('items/new') }}" class="btn btn-primary">出品する</a>
+    <a href="items/create" class="btn btn-primary">出品する</a>
 
 </body>
 

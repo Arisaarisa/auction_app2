@@ -9,11 +9,11 @@
 
 <body>
     <h1>商品登録フォーム</h1>
-    <form action="/items" method="post">
-    @csrf
+    <form action="/items" method="post" enctype="multipart/form-data">
+        @csrf
         <p>
             商品名：<br>
-            <input type="text" name="name" value="{{old('name')}}">
+            <input type=" text" name="name" value="{{old('name')}}">
         </p>
         <p>
             商品詳細：<br>
@@ -33,7 +33,7 @@
         </p>
         <p>
             商品画像ＵＲＬ：<br>
-            <input type="file" name="image_url" value="{{old('image_url')}}">
+                <input type="file" name="image_url" value="{{old('image_url')}}">
         </p>
 
         <input type="submit" value="登録">

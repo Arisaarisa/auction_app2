@@ -7,32 +7,26 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-        // showページへ移動
-    public function show(Request $request) {
-    $id = $request -> id;
-    $item = Item::find($id);
-    return view('Items.show',['item' => $item]);
-    }
-
-    public function index(Request $request)
+    
+    public function index()
     {
         // モデル名::テーブル全件取得
         $items = Item::all();
         // Itemsティレクトリーの中のindexページを指定し、itemsの連想配列を代入
         return view('Items.index', ['items' => $items]);
+        // return $items->toArray();
     }
-
-    public function new(Request $request)
+    
+    public function create()
     {
-        return view('items.new');
-
+        return view('Items.create');
+        
     }
-    public function create(Request $request)
+    public function store(Request $request)
     {
         // インスタンスの作成
         $item = new Item;
         // 値の用意
-        
         $item->name = $request->name;
         $item->description = $request->description;
         $item->price = $request->price;
@@ -44,5 +38,11 @@ class ItemController extends Controller
         $item->save();
         // 登録したらindexに戻る
         return redirect('/items');
+    }
+    // showページへ移動
+    public function show($id)
+    {
+        $item = Item::find($id);
+        return view('Items.show',['item' => $item]);
     }
 };
