@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p>
         <b>商品名：{{$item -> name}}</b>
@@ -21,10 +23,12 @@
     <p>
         <b>電子メール：{{$item -> email}}</b>
     </p>
-    
+
     <p>
         <img src="{{$item -> image_url}}">
+        <img src="{{ asset('/storage/img/'.$item->file_name) }}">
     </p>
-        
+
 </body>
+
 </html>
