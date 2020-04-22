@@ -48,4 +48,14 @@ class ItemController extends Controller
         $item = Item::find($id);
         return view('Items.show',['item' => $item]);
     }
+
+    public function edit(Request $request) {
+        $item = Item::find($request->id);
+        return view('item.edit', ['item' => $item]);
+    }
+
+    public function update() {
+
+    }
 };
+
