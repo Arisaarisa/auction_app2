@@ -34,7 +34,13 @@ class ItemController extends Controller
         $item->email = $request->email;
         $filename = $request->file('image_url')->store('public/image');
         $item->image_url = basename($filename);
+
         $item->timestamps =false;
+        // $path = $request->file('image_url')->store('public/img');
+        // $item->image_url = $request->image_url->Item::create(['image_url' => basename($path)]);
+
+        // Item::create(['file_name' => basename($path)]);
+        // $item->image_url = $request->image_url{['file_name' => basename($path)]};
         // インスタンスに値を設定して保存
         $item->save();
         // 登録したらindexに戻る
