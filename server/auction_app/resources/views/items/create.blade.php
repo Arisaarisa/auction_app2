@@ -9,7 +9,7 @@
 
 <body>
     <h1>商品登録フォーム</h1>
-    <form action="/items"" method="post" enctype="multipart/form-data">
+    <form action="/items" method="post" enctype="multipart/form-data">
         @csrf
         <p>
             商品名：<br>
