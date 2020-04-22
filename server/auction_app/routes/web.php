@@ -26,4 +26,4 @@ Route::get('/', function () {
 // Route::get('/items/{id}/edit', 'ItemController@edit');
 // Route::patch('/items/{id}', 'ItemController@update');
 // Route::delete('/items/{id}', 'ItemController@destroy');
-Route::resource('/items', 'ItemController');
+Route::resource('items', 'ItemController');

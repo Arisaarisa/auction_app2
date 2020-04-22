@@ -32,14 +32,9 @@ class ItemController extends Controller
         $item->price = $request->price;
         $item->seller = $request->seller;
         $item->email = $request->email;
-        $item->image_url = $request->image_url->store('public/img');
-        // //画像ファイルが生成される&pathにフォルダのパスが記述される
-        // $path = $request->file->store('public/img');
-        // //$pathの値をDBに入れる
-        // Model::insert([
-        //     "image_url" => $path
-        // ]);
- 
+        $filename = $request->file('image_url')->store('public/image');
+        $item->image_url = basename($filename);
+
         $item->timestamps =false;
         // $path = $request->file('image_url')->store('public/img');
         // $item->image_url = $request->image_url->Item::create(['image_url' => basename($path)]);
