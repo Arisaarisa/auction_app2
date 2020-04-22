@@ -25,8 +25,8 @@
     </p>
 
     <p>
-        <img src="{{$item -> image_url}}">
-        <img src="'/storage/img/{{$item->image_url}}">
+        <!-- sotrageの中のpublicのimageディレクトリの中から拾ってくる -->
+        <img src="/storage/image/{{$item->image}}">
     </p>
 
 </body>

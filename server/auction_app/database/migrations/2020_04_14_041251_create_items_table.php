@@ -20,7 +20,7 @@ class CreateItemsTable extends Migration
             $table->integer('price');
             $table->string('seller');
             $table->string('email');
-            $table->text('image_url');
+            $table->text('image');
         });
     }
 

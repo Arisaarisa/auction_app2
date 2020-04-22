@@ -33,7 +33,7 @@
         </p>
         <p>
             商品画像ＵＲＬ：<br>
-                <input type="file" name="image_url" value="{{old('image_url')}}">
+            <input type="file" name="image" value="{{old('image')}}">
         </p>
 
         <input type="submit" value="登録">
