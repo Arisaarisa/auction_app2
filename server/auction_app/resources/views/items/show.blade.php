@@ -23,7 +23,7 @@
     </p>
     
     <p>
-        <img src="{{$item -> image_url}}">
+        <img src="/storage/image/{{$item -> image_url}}">
     </p>
         
 </body>
