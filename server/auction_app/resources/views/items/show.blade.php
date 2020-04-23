@@ -28,6 +28,8 @@
         <!-- sotrageの中のpublicのimageディレクトリの中から拾ってくる -->
         <img src="/storage/image/{{$item->image}}">
     </p>
+<!-- idを引き継いだまま編集へジャンプ -->
+    <a href="/items/{{$item->id}}/edit" class="btn btn-primary">編集する</a>
 
 </body>
 

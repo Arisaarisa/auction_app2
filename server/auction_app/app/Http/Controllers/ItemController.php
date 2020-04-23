@@ -35,7 +35,7 @@ class ItemController extends Controller
         //画像ファイルが生成される&pathにフォルダのパスが記述される
         $filename = $request->file('image')->store('public/image');
         $item->image = basename($filename);
- 
+
         $item->timestamps =false;
 
         $item->save();
@@ -49,13 +49,34 @@ class ItemController extends Controller
         return view('Items.show',['item' => $item]);
     }
 
-    public function edit(Request $request) {
-        $item = Item::find($request->id);
-        return view('item.edit', ['item' => $item]);
+    public function edit($id) {
+
+        $item = Item::find($id);
+        // idを見つけたらedit.blade.phpに飛ばす
+        return view('Items.edit', ['item' => $item]);
     }
 
-    public function update() {
+    public function update(Request $request, $id) {
+        // ここはidで探してt持ってくる以外は新規登録とおなじ
+        $item = Item::find($id);
+        // $item = $request->all();
+        // $item->file($item)->save();
+        // return redirect('items');
+        // 値の用意
+        $item->name = $request->name;
+        $item->description = $request->description;
+        $item->price = $request->price;
+        $item->seller = $request->seller;
+        $item->email = $request->email;
+        // 画像ファイルが生成される&pathにフォルダのパスが記述される
+        $filename = $request->file('image')->store('public/image');
+        $item->image = basename($filename);
 
+        $item->timestamps = false;
+        // 保存
+        $item->save();
+        // 登録したらindexに戻る
+        return redirect('/items');
     }
 };
 
