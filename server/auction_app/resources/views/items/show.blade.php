@@ -30,6 +30,8 @@
     </p>
 <!-- idを引き継いだまま編集へジャンプ -->
     <a href="/items/{{$item->id}}/edit" class="btn btn-primary">編集する</a>
+    <!-- つまづき2:そのまま削除する方法がわからない！のでとりあえずルート追加してdelete.blade.phpに飛ばす -->
+    <a href="/items/{{$item->id}}/delete" class="btn btn-primary"> 削除する</a>
 
 </body>
 

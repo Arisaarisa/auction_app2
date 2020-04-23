@@ -28,3 +28,5 @@ Route::get('/', function () {
 // Route::delete('/items/{id}', 'ItemController@destroy');
 // Route::resource('/items', 'ItemController');
 Route::resource('items', 'ItemController');
+// つまづき1削除ページの追加
+Route::get('items/{id}/delete', 'ItemController@delete');

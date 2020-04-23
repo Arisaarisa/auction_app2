@@ -22,6 +22,7 @@ class ItemController extends Controller
         return view('Items.create');
         
     }
+
     public function store(Request $request)
     {
         // インスタンスの作成
@@ -49,16 +50,19 @@ class ItemController extends Controller
         return view('Items.show',['item' => $item]);
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
 
         $item = Item::find($id);
         // idを見つけたらedit.blade.phpに飛ばす
         return view('Items.edit', ['item' => $item]);
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id) 
+    {
         // ここはidで探してt持ってくる以外は新規登録とおなじ
         $item = Item::find($id);
+        // これ使いたいけどうまくいかない
         // $item = $request->all();
         // $item->file($item)->save();
         // return redirect('items');
@@ -77,6 +81,22 @@ class ItemController extends Controller
         $item->save();
         // 登録したらindexに戻る
         return redirect('/items');
+    }
+
+    public function delete($id)
+    {
+
+        $item = Item::find($id);
+        // idを見つけたらdelete.blade.phpに飛ばす
+        return view('Items.delete', ['item' => $item]);
+    }
+
+    public function destroy($id) 
+    {
+        $item = Item::find($id);
+        $item->delete();
+        return redirect('/items');
+
     }
 };
 
